@@ -1,0 +1,147 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif, Arial, Helvetica;
+    box-sizing: border-box;
+}
+
+html body{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+main{
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body{
+    background: #166e80 ;
+    overflow-x: hidden;
+    
+}
+
+#header{
+    width: 100%;
+    height: 100vh;
+    background-image: url(images/cmd_profil.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.top-contents{
+    padding: 15px 20px;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:hover{
+    color: #fff;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    height: 80px;
+}
+
+nav img{
+    height: 80px;
+    width: 200px;
+}
+
+.list-skill >* {
+    display: inline-block;
+    margin: 15px 20px;
+    font-size: 20px;
+}
+
+.presentation{
+    margin-top: 400px;
+}
+
+.presentation h1{
+    margin-top: 290px;
+    margin-bottom: 10px;
+}
+
+.presentation p{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.presentation span{
+    color:rgb(13, 6, 91);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.list-skill img{
+    height: 20px;
+    width: 20px;
+}
+
+.top-contents nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: darkorange;
+
+}
+
+.contents{
+    margin-top: 1px;
+}
+
+/*---------- About Me section -------------------*/
+
+.grid-item{
+    display: grid;
+    grid-template-columns: 30% 70%;
+    gap: 15px;
+    margin-bottom: 50px;
+}
+
+
+
+.second-col p{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 25px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.second-col p span{
+    font-weight: bold;
+}
+
+.personal-info{
+    margin-right: 25px;
+}
+
+.personal-info nav{
+    display: flex;
+}
+
+.personal-info nav p{
+    font-weight: bold;
+    cursor: pointer;
+    color: rgb(6, 65, 33);
+}
+
+.info-link::after{
+    content: '';
+    width: 0;
+    height: 4px;
+    background: #550306;
+    position: absolute;
+    
+}
+
+.skills{
+    
+}

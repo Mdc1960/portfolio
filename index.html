@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My personal portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main>
+        <div id="header">
+            <div class="top-contents">
+                <nav>
+                    <ul class="list-skill">
+                        <li><a href="#header">
+                            <img src="/images/accueil.png" alt="Logo home">
+                            Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#about-content">
+                                <img src="/images/aboutme.png" alt="Logo About Me">
+                                About Me
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="/images/projects.png" alt="Logo Projects">
+                                Projects
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="/images/contact.png" alt="Logo Contact">
+                                Contact
+
+                            </a>
+                        </li>
+                    </ul>
+                    <img class="mylogo" src="/images/cmd_logo.png" alt="Logo CMD">
+                </nav>
+                <div class="presentation">
+                    <h1>Hello, I'am <br><span>Mamadou Djiguissèmin COULIBALY</span></h1>
+                    <p>Software engineer, web application developer</p>
+                </div>
+            </div>
+        </div>
+        <!------------ About Me ------------->
+        <div id="about-content" class="contents">
+            <div class="grid-item">
+                <div class="first-col">
+                    <img src="/images/photo-cmd.jpeg" alt="My picture">
+                </div>
+                <div class="second-col">
+                    <h1>ABOUT ME</h1>
+                    <p>
+                        I am a student in computer Engineering cycle at the Polytechnic school of the University of Tours (Polytech Tours) in <span>France.</span><br><br>
+                        My appetence for new technologies and artificial intelligence pushed me to specialize in software development and AI tools
+                        to promote the optimization of solutions to complex problems.<br><br>Here you will find my personal and collective projects
+                        and all my skills in web development, software and web applications.
+                    </p>
+                    <div class="personal-info">
+                        <nav>
+                            <p id="skills" class="info-link skills" onclick="show()">Technical Skills</p>
+                            <p id="education" class="info-link" onclick="show()">Education</p>
+                            <p id="experiences" class="info-link" onclick="show()">Experiences</p>
+                        </nav>
+                        <div class="info-contents">
+                            <div class="skills-content">
+                                <ul>
+                                    Languages 
+                                    <li>
+                                        <button>Python</button>
+                                        <button>C/C++</button>
+                                        <button>Java</button>
+                                    </li>
+
+                                    <li>
+                                        <button>HTML</button>
+                                        <button>CSS</button>
+                                        <button>JavaScript</button>
+                                    </li>
+                                
+                                </ul>
+
+                                <ul>
+                                    Frameworks 
+                                    <li>
+                                        <button>Angular</button>
+                                        <button>Spring Boot</button>
+                                        <button>Node.js</button>
+                                    </li>
+                                    
+                                </ul>
+                                <ul>
+                                    Data Bases 
+                                    <li>
+                                        <button>MySQL</button>
+                                        <button>PostgreSQL</button>
+                                        <button>MariaDB</button>
+                                        <button>SQLite</button>
+                                    </li>
+                                    
+                                </ul>
+
+                                <ul>
+                                    Tools/DevOps
+                                    <li>
+                                        <button>Git</button>
+                                        <button>GitLab</button>
+                                        <button>GitHub</button>
+                                        <button>Postman</button>
+                                    </li>
+                                    <li>
+                                        <button>Docker</button>
+                                        <button>GitLab Action</button>
+                                        <button>GitLab CI/CD</button>
+                                        
+                                    </li>
+                                    
+                                </ul>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

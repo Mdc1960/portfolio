@@ -63,14 +63,14 @@
                     </p>
                     <div class="personal-info">
                         <nav>
-                            <p id="skills" class="info-link skills" onclick="show()">Technical Skills</p>
-                            <p id="education" class="info-link" onclick="show()">Education</p>
-                            <p id="experiences" class="info-link" onclick="show()">Experiences</p>
+                            <p id="skills" class="info-link info-activated" onclick="show('skill',event)">Technical Skills</p>
+                            <p id="educations" class="info-link" onclick="show('education',event)">Education</p>
+                            <p id="experiences" class="info-link" onclick="show('experience',event)">Experiences</p>
                         </nav>
                         <div class="info-contents">
-                            <div class="skills-content">
+                            <div id="skill" class="common content-activated">
                                 <ul>
-                                    Languages 
+                                    <span>Languages</span> 
                                     <li>
                                         <button>Python</button>
                                         <button>C/C++</button>
@@ -86,7 +86,7 @@
                                 </ul>
 
                                 <ul>
-                                    Frameworks 
+                                    <span>Frameworks</span> 
                                     <li>
                                         <button>Angular</button>
                                         <button>Spring Boot</button>
@@ -95,7 +95,7 @@
                                     
                                 </ul>
                                 <ul>
-                                    Data Bases 
+                                    <span>Data Bases </span>
                                     <li>
                                         <button>MySQL</button>
                                         <button>PostgreSQL</button>
@@ -106,7 +106,7 @@
                                 </ul>
 
                                 <ul>
-                                    Tools/DevOps
+                                    <span>Tools/DevOps</span>
                                     <li>
                                         <button>Git</button>
                                         <button>GitLab</button>
@@ -122,6 +122,41 @@
                                     
                                 </ul>
 
+                            </div>
+                            <div id="education" class="common">
+                                <ul>
+                                    <span>Polytech Tours</span> 
+                                    <li>
+                                        <button>Python</button>
+                                        <button>C/C++</button>
+                                        <button>Java</button>
+                                    </li>
+
+                                    <li>
+                                        <button>HTML</button>
+                                        <button>CSS</button>
+                                        <button>JavaScript</button>
+                                    </li>
+                                
+                                </ul>
+                            </div>
+
+                            <div id="experience" class="common">
+                                <ul>
+                                    <span>Internship</span> 
+                                    <li>
+                                        <button>Python</button>
+                                        <button>C/C++</button>
+                                        <button>Java</button>
+                                    </li>
+
+                                    <li>
+                                        <button>HTML</button>
+                                        <button>CSS</button>
+                                        <button>JavaScript</button>
+                                    </li>
+                                
+                                </ul>
                             </div>
 
                         </div>

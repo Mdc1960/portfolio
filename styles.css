@@ -102,7 +102,7 @@ nav img{
 .grid-item{
     display: grid;
     grid-template-columns: 30% 70%;
-    gap: 15px;
+    gap: 1px;
     margin-bottom: 50px;
 }
 
@@ -121,6 +121,7 @@ nav img{
 
 .personal-info{
     margin-right: 25px;
+    position: relative;
 }
 
 .personal-info nav{
@@ -133,15 +134,44 @@ nav img{
     color: rgb(6, 65, 33);
 }
 
-.info-link::after{
+/*.info-link::after{
     content: '';
     width: 0;
     height: 4px;
-    background: #550306;
+    background: #b7bd15;
     position: absolute;
-    
+    left: 0;
+    bottom: 285px;
+    transition: 0.4s;
+}*/
+
+/*.info-link.info-activated::after{
+    width: 10%;
+}*/
+
+.info-contents ul li{
+    list-style: none;
+    margin: 10px;
 }
 
-.skills{
-    
+
+.info-contents ul span{
+    color: #070421;
+    font-weight: bold;
 }
+
+.common{
+    display: none;
+}
+
+.common.content-activated{
+    display: block;
+}
+
+/*.common{
+    display: none;
+}
+
+.common.skills-content{
+    display: block;
+}*/

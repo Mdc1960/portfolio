@@ -217,6 +217,10 @@ nav img{
     background-color: #54030f;
 }
 
+#project-contents{
+    margin-bottom: 50px;
+}
+
 #next{
     margin-right: 300px;
     color: white;

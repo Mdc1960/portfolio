@@ -3,7 +3,7 @@ var common_info = document.getElementsByClassName('info-link');
 var contents = document.getElementsByClassName('common');
 
 function show(name,event){
-    
+
     for (let common of common_info){
         common.classList.remove('info-activated');
     }
@@ -16,5 +16,8 @@ function show(name,event){
     document.getElementById(name).classList.add('content-activated');
 
 
-    alert("You will see my " + name);
+}
+
+function showadd(){
+    alert("Address : Parc Grandmont, 37000 Tours, France")
 }

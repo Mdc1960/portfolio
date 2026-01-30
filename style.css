@@ -283,13 +283,13 @@ nav .list-skill img {
 }
 
 /* Project controls */
-#project-contents .second {
+#certifications-contents .second, #project-contents .second {
   display: flex;
   gap: 12px;
   justify-content: flex-end;
 }
 
-#project-contents button {
+#project-contents button, #certifications-contents button {
   background: var(--primary);
   color: white;
   border: none;

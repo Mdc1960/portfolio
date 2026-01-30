@@ -4,6 +4,7 @@
     - Affiche/masque le formulaire de contact
     - Navigation lisse et mise en avant du lien actif
     - Galerie vidéo (Next / Back)
+    - Affiche les technologies utilisées selon la vidéo sélectionnée
 */
 
 (() => {
@@ -97,6 +98,7 @@
      const videoEl = document.querySelector('#project-contents video');
      const backBtn = $('#back');
      const nextBtn = $('#next');
+     const showTechBtn = $('#show-tech');
      if (!videoEl || !backBtn || !nextBtn) return;
 
      // Liste de vidéos (modifier/ajouter vos sources réelles)
@@ -106,7 +108,46 @@
         './JavaDemoVideo/Projet3.mp4'
      ];
 
+     // Technologies associées à chaque vidéo (même ordre que videos[])
+     const techs = [
+        ['Java', 'JavaFX', 'Maven'],
+        ['Spring Boot', 'MySQL', 'REST API'],
+        ['Angular', 'Node.js', 'Express', 'MongoDB']
+     ];
+
      let index = 0;
+     let techPanelVisible = false;
+
+     function createOrUpdateTechPanel() {
+        let panel = document.getElementById('tech-panel');
+        const items = techs[index] || [];
+        if (!panel) {
+          panel = document.createElement('div');
+          panel.id = 'tech-panel';
+          panel.className = 'tech-panel';
+          // simple inline minimal styling so it's visible without CSS changes
+          panel.style.border = '1px solid #ddd';
+          panel.style.padding = '10px';
+          panel.style.marginTop = '12px';
+          panel.style.background = '#fff';
+          panel.style.maxWidth = '100%';
+          panel.style.boxSizing = 'border-box';
+          // insert after video element
+          if (videoEl.parentNode) videoEl.parentNode.insertBefore(panel, videoEl.nextSibling);
+        }
+
+        // build contents
+        const title = '<h3 style="margin:0 0 8px 0;font-size:1rem">Technologies</h3>';
+        const list = items.length ? `<ul style="margin:0;padding-left:18px">${items.map(t => `<li>${t}</li>`).join('')}</ul>` : '<p>No technologies listed for this video.</p>';
+        panel.innerHTML = title + list;
+
+        // visibility and aria
+        panel.style.display = techPanelVisible ? 'block' : 'none';
+        if (showTechBtn) {
+          showTechBtn.setAttribute('aria-expanded', String(techPanelVisible));
+          showTechBtn.textContent = techPanelVisible ? 'Hide Technologies' : 'Show Technologies';
+        }
+     }
 
      function updateVideo() {
         const src = videos[index];
@@ -123,11 +164,13 @@
           videoEl.appendChild(s);
         }
         try { videoEl.load(); } catch (e) {}
-        // lecture automatique courte (optionnel)
-        // videoEl.play().catch(()=>{});
         // mettre état des boutons
         backBtn.disabled = videos.length <= 1;
         nextBtn.disabled = videos.length <= 1;
+
+        // mettre à jour panel si déjà créé / visible
+        const panelExists = !!document.getElementById('tech-panel');
+        if (panelExists) createOrUpdateTechPanel();
      }
 
      backBtn.addEventListener('click', () => {
@@ -138,6 +181,15 @@
         index = (index + 1) % videos.length;
         updateVideo();
      });
+
+     if (showTechBtn) {
+       showTechBtn.setAttribute('role', 'button');
+       showTechBtn.setAttribute('aria-expanded', 'false');
+       showTechBtn.addEventListener('click', () => {
+         techPanelVisible = !techPanelVisible;
+         createOrUpdateTechPanel();
+       });
+     }
 
      updateVideo();
   }

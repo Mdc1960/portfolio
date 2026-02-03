@@ -108,9 +108,7 @@
 
     // Liste de vidéos (modifier/ajouter vos sources réelles)
     const videos = [
-    './JavaDemoVideo/ProjetJavaDemoVideo.mp4',
-    './JavaDemoVideo/Projet2.mp4',
-    './JavaDemoVideo/Projet3.mp4'
+    './JavaDemoVideo/ProjetJavaDemoVideo.mp4'
     ];
 
     // Technologies associées à chaque vidéo (même ordre que videos[])

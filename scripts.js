@@ -107,10 +107,22 @@
     if (!videoEl || !backBtn || !nextBtn) return;
 
     // Liste de vidéos (modifier/ajouter vos sources réelles)
-    const videos = [
+    /*const videos = [
     './DemoVideo/ProjetJavaDemoVideo.mp4',
     'https://drive.google.com/file/d/1Sp-sBb243WEwloKsC64H8KHvyMAipUY4/view?usp=share_link'
+    ];*/
+
+    const videos = [
+        {
+            type: 'local',
+            src: './DemoVideo/ProjetJavaDemoVideo.mp4'
+        },
+        {
+            type: 'drive',
+            src: 'https://drive.google.com/file/d/1Sp-sBb243WEwloKsC64H8KHvyMAipUY4/preview'
+        }
     ];
+
 
     // Technologies associées à chaque vidéo (même ordre que videos[])
     const techs = [
@@ -153,29 +165,63 @@
     }
     }
 
-    function updateVideo() {
-    const src = videos[index];
-    // remplace la source du <video>
-    const sourceEl = videoEl.querySelector('source');
-    if (sourceEl) {
-        sourceEl.src = src;
-    } else {
-        // si pas de <source>, créer-en un
-        const s = document.createElement('source');
-        s.src = src;
-        s.type = 'video/mp4';
-        videoEl.innerHTML = '';
-        videoEl.appendChild(s);
-    }
-    try { videoEl.load(); } catch (e) {}
-    // mettre état des boutons
-    backBtn.disabled = videos.length <= 1;
-    nextBtn.disabled = videos.length <= 1;
+    /*function updateVideo() {
+        const src = videos[index];
+        // remplace la source du <video>
+        const sourceEl = videoEl.querySelector('source');
+        if (sourceEl) {
+            sourceEl.src = src;
+        } else {
+            // si pas de <source>, créer-en un
+            const s = document.createElement('source');
+            s.src = src;
+            s.type = 'video/mp4';
+            videoEl.innerHTML = '';
+            videoEl.appendChild(s);
+        }
+        try { videoEl.load(); } catch (e) {}
+        // mettre état des boutons
+        backBtn.disabled = videos.length <= 1;
+        nextBtn.disabled = videos.length <= 1;
 
-    // mettre à jour panel si déjà créé / visible
-    const panelExists = !!document.getElementById('tech-panel');
+        // mettre à jour panel si déjà créé / visible
+        const panelExists = !!document.getElementById('tech-panel');
         if (panelExists) createOrUpdateTechPanel();
+    }*/
+
+    function updateVideo() {
+        const item = videos[index];
+        const iframe = document.getElementById('drive-player');
+
+        if (item.type === 'local') {
+            iframe.style.display = 'none';
+            videoEl.style.display = 'block';
+
+            let sourceEl = videoEl.querySelector('source');
+            if (!sourceEl) {
+            sourceEl = document.createElement('source');
+            sourceEl.type = 'video/mp4';
+            videoEl.appendChild(sourceEl);
+            }
+            sourceEl.src = item.src;
+            videoEl.load();
+
+        } else if (item.type === 'drive') {
+            videoEl.pause();
+            videoEl.style.display = 'none';
+
+            iframe.style.display = 'block';
+            iframe.src = item.src;
+        }
+
+        backBtn.disabled = videos.length <= 1;
+        nextBtn.disabled = videos.length <= 1;
+
+        if (document.getElementById('tech-panel')) {
+            createOrUpdateTechPanel();
+        }
     }
+
 
     backBtn.addEventListener('click', () => {
     index = (index - 1 + videos.length) % videos.length;

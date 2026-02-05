@@ -299,6 +299,36 @@
     updateIframe();
   }
 
+    const form = document.getElementById('contact-form');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault(); // empêche la soumission classique
+
+        // Récupérer les valeurs
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+
+        // Envoyer via EmailJS
+        emailjs.send('service_xks1nqr', 'template_a184iem', {
+            from_name: name,
+            from_email: email,
+            message: message
+        })
+        .then(() => {
+            alert('Message sent successfully !');
+            form.reset(); // vider le formulaire
+            // Optionnel : masquer le formulaire
+            window.showadd();
+        }, (err) => {
+            console.error(err);
+            alert('Oops… Something went wrong.');
+        });
+    });
+
+
+
+
   // --- Initialisation au chargement ---
   document.addEventListener('DOMContentLoaded', () => {
     enableSmoothNav();

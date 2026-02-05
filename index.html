@@ -6,6 +6,17 @@
     <title>My personal portfolio</title>
     <link rel="stylesheet" href="style.css">
     <script src="scripts.js" defer></script>
+
+    <!--<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>-->
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    
+
+    <script type="module">
+        emailjs.init('BHSTVqX7wMvWzEcFu'); 
+    </script>
+
+
 </head>
 <body>
     <main>
@@ -300,7 +311,7 @@
                         </button>
                     </a>
                     <button onclick="showadd()">
-                        <img src="./images/address.png" alt="Logo home">
+                        <img src="./images/forms.png" alt="Logo home">
                     </button>
                     <a href="tel:+33753334637">
                         <button>
@@ -311,7 +322,7 @@
                  </div>
 
                 <div id="call" class="call">
-                    <form>
+                    <form id="contact-form">
                         <label class="form-contents" for="name">Send me a message !</label>
                         <input class="form-contents" id="name" type="text" required placeholder="Please enter your name">
 
@@ -321,7 +332,7 @@
                     
                         <textarea class="form-contents" name="message" id="message" required placeholder="Write your message here"></textarea>
 
-                        <button class="form-contents">Send Message</button>
+                        <button type="submit" class="form-contents">Send Message</button>
                     </form>
                 </div>
             </div>

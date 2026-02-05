@@ -377,6 +377,14 @@ nav .list-skill img {
   font-weight: 700;
 }
 
+#send-button{
+    cursor: pointer;
+}
+
+#send-button:hover{
+    background-color: cyan;
+}
+
 /* Utilities */
 .hidden { display: none !important; }
 .center { text-align: center; }

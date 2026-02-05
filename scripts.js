@@ -311,15 +311,13 @@
 
         // Envoyer via EmailJS
         emailjs.send('service_xks1nqr', 'template_a184iem', {
-            from_name: name,
-            from_email: email,
+            name: name,
+            email: email,
             message: message
         })
         .then(() => {
             alert('Message sent successfully !');
-            form.reset(); // vider le formulaire
-            // Optionnel : masquer le formulaire
-            window.showadd();
+            form.reset();
         }, (err) => {
             console.error(err);
             alert('Oops… Something went wrong.');

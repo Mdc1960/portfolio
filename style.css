@@ -9,7 +9,7 @@ html, body { height: 100%; }
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   color: #1f2937; /* slate-800 */
-  background: linear-gradient(180deg,#f8fafc 0%, #eef2f6 100%);
+  background: linear-gradient(180deg,#f8fafc 0%, #f6eef6 100%);
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
   line-height: 1.45;
@@ -91,7 +91,8 @@ nav .list-skill li a {
 
 nav .list-skill li:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 22px rgba(16,24,40,0.08);
+  box-shadow: 0 8px 22px rgba(4, 50, 142, 0.08);
+  background-color: chocolate;
 }
 
 nav .list-skill img {
@@ -194,7 +195,11 @@ nav .list-skill img {
   transition: background .16s ease, color .16s ease, transform .12s ease;
 }
 
-.info-link:hover { transform: translateY(-3px); }
+.info-link:hover { 
+    transform: translateY(-3px); 
+    background-color: rgb(30, 138, 210);
+    color: white;
+}
 
 .info-activated {
   background: linear-gradient(90deg, rgba(14,165,164,0.08), rgba(124,58,237,0.06));

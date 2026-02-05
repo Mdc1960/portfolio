@@ -108,13 +108,14 @@
 
     // Liste de vidéos (modifier/ajouter vos sources réelles)
     const videos = [
-    './JavaDemoVideo/ProjetJavaDemoVideo.mp4'
+    './DemoVideo/ProjetJavaDemoVideo.mp4',
+    './DemoVideo/VideoDemoProjetShottenTotten.mp4'
     ];
 
     // Technologies associées à chaque vidéo (même ordre que videos[])
     const techs = [
         ['Java', 'JavaFX', 'Maven'],
-        ['Spring Boot', 'MySQL', 'REST API'],
+        ['C++', 'PlantUML', 'Design Patterns'],
         ['Angular', 'Node.js', 'Express', 'MongoDB']
     ];
 

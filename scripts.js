@@ -109,7 +109,7 @@
     // Liste de vidéos (modifier/ajouter vos sources réelles)
     const videos = [
     './DemoVideo/ProjetJavaDemoVideo.mp4',
-    './DemoVideo/VideoDemoProjetShottenTotten.mp4'
+    'https://drive.google.com/file/d/1Sp-sBb243WEwloKsC64H8KHvyMAipUY4/view?usp=share_link'
     ];
 
     // Technologies associées à chaque vidéo (même ordre que videos[])

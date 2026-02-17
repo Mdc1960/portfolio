@@ -113,6 +113,10 @@
     ];*/
 
     const videos = [
+        { 
+          type: 'drive', 
+          src: 'https://drive.google.com/file/d/15-Iq1SMwhKXe4AROJRano_1a0vRaq9Tq/preview' 
+        },
         {
             type: 'local',
             src: './DemoVideo/ProjetJavaDemoVideo.mp4'
@@ -126,9 +130,9 @@
 
     // Technologies associées à chaque vidéo (même ordre que videos[])
     const techs = [
+        ['Angular', 'Spring Boot', 'MySQL', 'JWT'],
         ['Java', 'JavaFX', 'Maven'],
-        ['C++', 'PlantUML', 'Design Patterns'],
-        ['Angular', 'Node.js', 'Express', 'MongoDB']
+        ['C++', 'PlantUML', 'Design Patterns']
     ];
 
     let index = 0;

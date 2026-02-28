@@ -1,19 +1,10 @@
-/* scripts.js
-    Rends la page interactive :
-    - Onglets "Technical Skills / Education / Experiences"
-    - Affiche/masque le formulaire de contact
-    - Navigation lisse et mise en avant du lien actif
-    - Galerie vidéo (Next / Back)
-    - Affiche les technologies utilisées selon la vidéo sélectionnée
-    - Galerie Certifications (Next / Back)
-*/
-
+// Cette fonction engloble d'autres fonctions et permet une exécution automatique des tâches.
 (() => {
-  // --- Helpers ---
+  // Helpers
   const $ = sel => document.querySelector(sel);
   const $$ = sel => Array.from(document.querySelectorAll(sel));
 
-  // --- Tabs dans About Me ---
+  // Tabs dans About Me
   window.show = function(targetId, evt) {
 
     try {
@@ -40,7 +31,7 @@
 
   };
 
-  // --- Afficher/Masquer le formulaire de contact ---
+  // Afficher/Masquer le formulaire de contact
   window.showadd = function() {
     const call = $('#call');
     if (!call) return;
@@ -57,7 +48,7 @@
     }
   };
 
-  // --- Navigation lisse pour les ancres ---
+  // Navigation lisse pour les ancres
   function enableSmoothNav() {
     const anchors = $$('nav a[href^="#"]');
     anchors.forEach(a => {
@@ -75,7 +66,7 @@
 
   }
 
-  // --- Mettre en avant le lien de navigation actif selon le scroll ---
+  // Mettre en avant le lien de navigation actif selon le scroll
   function enableActiveNavOnScroll() {
     const sections = $$('main > div[id]');
     if (!sections.length) return;
@@ -98,19 +89,13 @@
 
   }
 
-  // --- Galerie vidéo Projects (Next / Back) ---
+  // Galerie vidéo Projects (Next / Back)
   function enableProjectGallery() {
     const videoEl = document.querySelector('#project-contents video');
     const backBtn = $('#back');
     const nextBtn = $('#next');
     const showTechBtn = $('#show-tech');
     if (!videoEl || !backBtn || !nextBtn) return;
-
-    // Liste de vidéos (modifier/ajouter vos sources réelles)
-    /*const videos = [
-    './DemoVideo/ProjetJavaDemoVideo.mp4',
-    'https://drive.google.com/file/d/1Sp-sBb243WEwloKsC64H8KHvyMAipUY4/view?usp=share_link'
-    ];*/
 
     const videos = [
         { 
@@ -169,30 +154,6 @@
     }
     }
 
-    /*function updateVideo() {
-        const src = videos[index];
-        // remplace la source du <video>
-        const sourceEl = videoEl.querySelector('source');
-        if (sourceEl) {
-            sourceEl.src = src;
-        } else {
-            // si pas de <source>, créer-en un
-            const s = document.createElement('source');
-            s.src = src;
-            s.type = 'video/mp4';
-            videoEl.innerHTML = '';
-            videoEl.appendChild(s);
-        }
-        try { videoEl.load(); } catch (e) {}
-        // mettre état des boutons
-        backBtn.disabled = videos.length <= 1;
-        nextBtn.disabled = videos.length <= 1;
-
-        // mettre à jour panel si déjà créé / visible
-        const panelExists = !!document.getElementById('tech-panel');
-        if (panelExists) createOrUpdateTechPanel();
-    }*/
-
     function updateVideo() {
         const item = videos[index];
         const iframe = document.getElementById('drive-player');
@@ -248,7 +209,7 @@
     updateVideo();
   }
 
-  // --- Galerie Certifications (Next / Back) ---
+  // Galerie Certifications (Next / Back)
   function enableCertificationGallery() {
     const iframe = document.querySelector('#certifications-contents iframe');
     const backBtn = $('#back-certifications');
@@ -257,6 +218,7 @@
 
     // Liste des certificats (modifier/ajouter vos fichiers réels)
     const certs = [
+      './Certifications/Mamadou_COULIBALY_Certification-gitlab-ci-cd.pdf',
       './Certifications/GitCertification.pdf',
       './Certifications/CourseraWordPressCertification.pdf',
       './Certifications/MatlabCertification.pdf'
@@ -331,7 +293,7 @@
 
 
 
-  // --- Initialisation au chargement ---
+  // Initialisation au chargement
   document.addEventListener('DOMContentLoaded', () => {
     enableSmoothNav();
     enableActiveNavOnScroll();

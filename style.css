@@ -1,26 +1,19 @@
-/* style.css
-    Professional, responsive styling for the provided portfolio HTML
-    Uses CSS variables for easy theming
-*/
-
-/* Reset / base */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { height: 100%; }
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  color: #1f2937; /* slate-800 */
+  color: #1f2937;
   background: linear-gradient(180deg,#f8fafc 0%, #f6eef6 100%);
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
   line-height: 1.45;
 }
 
-/* Theme colors */
 :root{
-  --primary: #0ea5a4;      /* teal */
+  --primary: #0ea5a4;
   --primary-dark: #0b8b89;
-  --accent: #7c3aed;       /* purple */
-  --muted: #6b7280;        /* gray-500 */
+  --accent: #7c3aed;
+  --muted: #6b7280;
   --card: #ffffff;
   --glass: rgba(255,255,255,0.6);
   --radius: 12px;
@@ -29,14 +22,13 @@ body {
   --max-mobile: 820px;
 }
 
-/* Page container */
 main {
   max-width: var(--container-w);
   margin: 36px auto;
   padding: 28px;
 }
 
-/* Header / top navigation */
+
 #header {
   background: linear-gradient(135deg, rgba(14,165,164,0.08), rgba(124,58,237,0.04));
   border-radius: var(--radius);
@@ -52,7 +44,6 @@ main {
   flex-wrap: wrap;
 }
 
-/* Navigation row */
 nav {
   display: flex;
   align-items: center;
@@ -102,7 +93,7 @@ nav .list-skill img {
   opacity: 0.95;
 }
 
-/* Logo */
+
 .mylogo {
   width: 64px;
   height: 64px;
@@ -111,7 +102,6 @@ nav .list-skill img {
   box-shadow: 0 6px 16px rgba(2,6,23,0.08);
 }
 
-/* Presentation / hero */
 .presentation {
   flex: 1 1 380px;
   min-width: 260px;
@@ -140,7 +130,6 @@ nav .list-skill img {
   font-size: 15px;
 }
 
-/* Sections common */
 .contents {
   margin-top: 22px;
   background: var(--card);
@@ -149,7 +138,6 @@ nav .list-skill img {
   box-shadow: var(--shadow);
 }
 
-/* About grid */
 .grid-item {
   display: grid;
   grid-template-columns: 260px 1fr;
@@ -165,7 +153,6 @@ nav .list-skill img {
   box-shadow: 0 8px 20px rgba(2,6,23,0.06);
 }
 
-/* About text */
 .second-col h1 {
   font-size: 22px;
   margin-bottom: 10px;
@@ -178,7 +165,7 @@ nav .list-skill img {
   font-size: 15px;
 }
 
-/* Personal info tabs */
+
 .personal-info nav {
   display: flex;
   gap: 12px;
@@ -207,7 +194,7 @@ nav .list-skill img {
   box-shadow: 0 6px 16px rgba(14,165,164,0.06);
 }
 
-/* Info content panes */
+
 .info-contents {
   background: linear-gradient(180deg, rgba(247,250,252,0.6), rgba(255,255,255,0.4));
   padding: 14px;
@@ -235,7 +222,6 @@ nav .list-skill img {
   flex-wrap: wrap;
 }
 
-/* Skill buttons */
 .buttons {
   display: inline-flex;
   gap: 8px;
@@ -258,7 +244,6 @@ nav .list-skill img {
   opacity: 0.95;
 }
 
-/* Projects */
 #project-contents {
   margin-top: 18px;
   padding: 18px;
@@ -276,7 +261,7 @@ nav .list-skill img {
 #project-contents .first {
   border-radius: 10px;
   overflow: hidden;
-  background: #000; /* video background */
+  background: #000; 
   margin-bottom: 12px;
 }
 
@@ -287,7 +272,6 @@ nav .list-skill img {
   object-fit: cover;
 }
 
-/* Project controls */
 #certifications-contents .second, #project-contents .second {
   display: flex;
   gap: 12px;
@@ -307,7 +291,7 @@ nav .list-skill img {
 
 #project-contents button:hover { transform: translateY(-3px); background: var(--primary-dark); }
 
-/* Contact section */
+
 #contact-contents {
   margin-top: 18px;
   padding: 18px;
@@ -342,9 +326,9 @@ nav .list-skill img {
 
 #contacts img { width: 26px; height: 26px; object-fit: contain; }
 
-/* Contact form */
+
 .call {
-  display: none; /* visible via JS toggling */
+  display: none;  
   margin-top: 12px;
 }
 
@@ -385,11 +369,10 @@ nav .list-skill img {
     background-color: cyan;
 }
 
-/* Utilities */
 .hidden { display: none !important; }
 .center { text-align: center; }
 
-/* Responsive */
+
 @media (max-width: 920px) {
   .grid-item { grid-template-columns: 1fr; }
   .presentation { order: 2; width: 100%; }
@@ -406,7 +389,6 @@ nav .list-skill img {
   #project-contents video { height: 200px; }
 }
 
-/* Small accessibility focus states */
 a:focus, button:focus, input:focus, textarea:focus {
   outline: 3px solid rgba(14,165,164,0.14);
   outline-offset: 2px;

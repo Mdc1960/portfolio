@@ -216,6 +216,7 @@
 
     // Liste des certifications
     const certs = [
+      './Certifications/certification-linux-bash.pdf',
       './Certifications/Mamadou_COULIBALY_Certification-gitlab-ci-cd.pdf',
       './Certifications/GitCertification.pdf',
       './Certifications/CourseraWordPressCertification.pdf',

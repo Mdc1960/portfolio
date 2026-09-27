@@ -109,6 +109,10 @@
         {
             type: 'drive',
             src: 'https://drive.google.com/file/d/1Sp-sBb243WEwloKsC64H8KHvyMAipUY4/preview'
+        },
+        {
+            type: 'drive',
+            src: 'https://drive.google.com/file/d/1y-yfsiWhuENqmlREAr7AxlaV2_omVnjV/preview'
         }
     ];
 
@@ -117,7 +121,8 @@
     const techs = [
         ['Angular', 'Spring Boot', 'MySQL', 'JWT'],
         ['Java', 'JavaFX', 'Maven'],
-        ['C++', 'PlantUML', 'Design Patterns']
+        ['C++', 'PlantUML', 'Design Patterns'],
+        ['Python', 'Tkinter', 'IA', 'Algorithmique']
     ];
 
     let index = 0;
